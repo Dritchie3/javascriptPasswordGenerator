@@ -1,25 +1,6 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
+function btnClick(){
 
     // prompt/confirm length of password and what characters type to use. 
-    //  window.onload function to make sure html loads first.
     var length = prompt("Enter your password size. It must be between 8 and 128.", "0");
     var upper = confirm('I would like Uppercase in my password. Please click (OK) for Yes or (Cancel) for No.');
     var lower = confirm('I would like Lowercase in my password. Please click (OK) for Yes or (Cancel) for No.');
@@ -28,11 +9,9 @@ generateBtn.addEventListener("click", writePassword);
     var typecount= 0;
     var letter;
     var letters = [];
-    var charType = [];
-    
-    
+    var charType = [];    
 
-    // This is to come up with the types.
+    // Come up with the types.
     if (upper === true) {
         (typecount++);
     }
@@ -52,14 +31,7 @@ generateBtn.addEventListener("click", writePassword);
     // loop to keep choosing characters for the full length of the password
     for (l = 0; l < length; l++) { 
         console.log(length)
-      // var charType = [];
-      
-      // create random characters for the type sets chosen 
-      // for (i = 0; i < 1; i++){
-          // console.log(typecount)
-        letters.push(letter);
-        
-      //   charType = [];
+     
         // Character Generator Functions
         function getRandomUpper(){
           return String.fromCharCode(Math.floor(Math.random()*26)+65);
@@ -90,29 +62,22 @@ generateBtn.addEventListener("click", writePassword);
           charType.push(getRandomSpecial());      
         } 
         console.log(charType)
-
-        // letter = charType[Math.floor(Math.random() * charType.length)]; 
       
-
-        // console.log(letter); 
-        // letters.push(letter); 
-        // console.log(letters)
-      //   letter = [];          
-      // }
+      //Randomize the chosen charTypes
       for (var i =0; i < length; i++){
           charType[i] = charType[Math.floor(Math.random() * charType.length)]
           console.log(charType)
-      }
-    // console.log(charType)
-    
+      }    
   }   
-
+// take the first (chosen length) of random characters and print to webpage. remove all of the commas .
 var password2 = charType.splice(0,length).join('')
 console.log(charType.splice(0,length).join(''))
 
 document.getElementById("password").innerHTML = password2;
+}
 
-
+//start the function that starts javascript
+document.getElementById("generate").addEventListener("click", btnClick);
 
 
 
