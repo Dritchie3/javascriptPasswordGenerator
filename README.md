@@ -4,4 +4,4 @@ Create a random password generator.  Thi project utilizes the various javasript 
 
 git hub: https://github.com/Dritchie3/javascriptPasswordGenerator
 
-Projectwebpage git live: https://dritchie3.github.io/javascriptPasswordGenerator/
+Project webpage git live: https://dritchie3.github.io/javascriptPasswordGenerator/
